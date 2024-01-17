@@ -1,4 +1,5 @@
 import { useState } from "react";
+import vitto from '../assets/img/vitto1.png'
 
 
 const Pricing = () => {
@@ -8,11 +9,11 @@ const Pricing = () => {
     const packages = [
         { name: "Srart", monthlyPrice: 19, yearlyPrice: 199, description: "A common form of lorem ispsum readus: Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
         { name: "Advance", monthlyPrice: 39, yearlyPrice: 399, description: "A common form of lorem ispsum readus: Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
-        { name: "Premium", monthlyPrice: 59, yearlyPrice: 599, description: "A common form of lorem ispsum readus: Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
+        { name: "Premium", monthlyPrice: 59, yearlyPrice: 599, description: "A common form of lorem ispsum readus: Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
     ]
 
     return (
-        <div className="md:px-14 p-4 max-w-s mx-auto py-10">
+        <div className="md:px-14 p-4 max-w-s mx-auto py-10" id="pricing">
             <div className="text-center">
                 <h2 className="md:text-5xl text-3xl font-extrabold text-primary mb-2">Here are all our plans</h2>
                 <p className="text-tartiary md:w-1/3 mx-auto px-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, nostrum voluptatum! Dolorem expedita ipsum excepturi?</p>
@@ -36,9 +37,19 @@ const Pricing = () => {
                     packages.map((pkg, index) => <div key={index} className="border py-10 md:px-6 px-4 rounded-lg shadow-3xl">
                         <h3 className="text-3xl font-bold text-center text-primary">{pkg.name}</h3>
                         <p className="text-tartiary text-center my-5">{pkg.description}</p>
-                        <p>
+                        <p className="mt-5 text-center text-secondary text-4xl font-bold">
                             {isYearly ? `$${pkg.yearlyPrice}` : `$${pkg.monthlyPrice}`} <span className="text-base text-tartiary font-medium">/{isYearly ? 'year' : 'month'}</span>
                         </p>
+                        <ul className="mt-4 space-y-2 px-4">
+                            <li className="flex gap-3 items-center"><img src={vitto} alt="" className="w-4 h-4" /> Videos of Lessons</li>
+                            <li className="flex gap-3 items-center"><img src={vitto} alt="" className="w-4 h-4" />Homework check</li>
+                            <li className="flex gap-3 items-center"><img src={vitto} alt="" className="w-4 h-4" />Additional practical task</li>
+                            <li className="flex gap-3 items-center"><img src={vitto} alt="" className="w-4 h-4" />Monthly conferences</li>
+                            <li className="flex gap-3 items-center"><img src={vitto} alt="" className="w-4 h-4" />Personal advice from teachers</li>
+                        </ul>
+                        <div className="w-full mx-auto mt-8 flex items-center justify-center">
+                            <button className="btnPrimary">Get started</button>
+                        </div>
                     </div>)
                 }
             </div>
